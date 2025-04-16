@@ -14,11 +14,11 @@
             <div class="container-fluid">
                 <!--begin::Row-->
                 <div class="row">
-                    <div class="col-sm-6"><h3 class="mb-0">Jenis Service</h3></div>
+                    <div class="col-sm-6"><h3 class="mb-0">Mekanik</h3></div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-end">
                             <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page"><a href="{{route('jnsService.index')}}">Jenis Service</a></li>
+                            <li class="breadcrumb-item active" aria-current="page"><a href="{{route('mekanik.index')}}">Mekanik</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Add</li>
                         </ol>
                     </div>
@@ -40,22 +40,43 @@
                             </div>
                             <!--end::Header-->
                             <!--begin::Form-->
-                            <form class="needs-validation" action="{{ route('jnsService.store') }}" method="post" novalidate>
+                            <form class="needs-validation" action="{{ route('mekanik.store') }}" method="post" novalidate>
                                 <!--begin::Body-->
                                 @csrf
                                 <div class="card-body">
                                     <div class="row g-3">
                                         <div class="col-md-6">
-                                            <label class="form-label">Jenis Service</label>
-                                            <input type="text" class="form-control" name="jns_service"
-                                                placeholder="Masukkan Jenis Service" required
+                                            <label class="form-label">Nama Mekanik</label>
+                                            <input type="text" class="form-control" name="nm_mekanik"
+                                                placeholder="Masukkan Nama Mekanik" required
                                             />
                                             <div class="invalid-feedback">Tabel Tidak Boleh Kosong!</div>
                                         </div>
                                         <div class="col-md-6">
-                                            <label class="form-label">Keterangan</label>
-                                            <input type="text" class="form-control" name="keterangan"
-                                                placeholder="Masukkan Keterangan" required
+                                            <label class="form-label">Tanggal Lahir</label>
+                                            <input type="text" class="form-control" name="tgl_lahir"
+                                                placeholder="Masukkan Tanggal Lahir" required
+                                            />
+                                            <div class="invalid-feedback">Tabel Tidak Boleh Kosong!</div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label">Alamat</label>
+                                            <input type="text" class="form-control" name="alamat"
+                                                placeholder="Masukkan Alamat" required
+                                            />
+                                            <div class="invalid-feedback">Tabel Tidak Boleh Kosong!</div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label">NIK</label>
+                                            <input type="text" class="form-control" name="nik"
+                                                placeholder="Masukkan NIK" required
+                                            />
+                                            <div class="invalid-feedback">Tabel Tidak Boleh Kosong!</div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label">No HP</label>
+                                            <input type="text" class="form-control" name="no_hp"
+                                                placeholder="Masukkan Nomor" required
                                             />
                                             <div class="invalid-feedback">Tabel Tidak Boleh Kosong!</div>
                                         </div>

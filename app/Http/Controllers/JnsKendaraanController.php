@@ -56,7 +56,7 @@ class JnsKendaraanController extends Controller
         //
         $data = jenisKendaraan::where('id', '=', $id);
         $data->update([
-            'nm_jns_kendaraan' => $request->jenis_kendaraan
+            'nm_jns_kendaraan' => $request->nm_jns_kendaraan
         ]);
         return redirect('jnskendaraan');
     }

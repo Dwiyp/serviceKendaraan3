@@ -17,8 +17,9 @@
                     <div class="col-sm-6"><h3 class="mb-0">Jenis Kendaraan</h3></div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-end">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                            <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page"><a href="{{route('jnsKendaraan.index')}}">Jenis Kendaraan</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Add</li>
                         </ol>
                     </div>
                 </div>
@@ -39,15 +40,18 @@
                             </div>
                             <!--end::Header-->
                             <!--begin::Form-->
-                            <form action="{{ route('jnsKendaraan.store') }}" method="post">
+                            <form class="needs-validation" action="{{ route('jnsKendaraan.store') }}" method="post" novalidate>
                                 <!--begin::Body-->
                                 @csrf
                                 <div class="card-body">
-                                    <div class="mb-3">
-                                        <label class="form-label">Nama Jenis Kendaraan</label>
-                                        <input type="text" class="form-control" name="nm_jns_kendaraan"
-                                            placeholder="Masukkan Nama Jenis Kendaraan"
-                                        />
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <label class="form-label">Nama Jenis Kendaraan</label>
+                                            <input type="text" class="form-control" name="nm_jns_kendaraan"
+                                                placeholder="Masukkan Nama Jenis Kendaraan" required
+                                            />
+                                            <div class="invalid-feedback">Please choose a username.</div>
+                                        </div>
                                     </div>
                                 </div>
                                 <!--end::Body-->
@@ -58,6 +62,33 @@
                                 <!--end::Footer-->
                             </form>
                             <!--end::Form-->
+                            <!--begin::JavaScript-->
+                            <script>
+                                // Example starter JavaScript for disabling form submissions if there are invalid fields
+                                (() => {
+                                'use strict';
+
+                                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                                const forms = document.querySelectorAll('.needs-validation');
+
+                                // Loop over them and prevent submission
+                                Array.from(forms).forEach((form) => {
+                                    form.addEventListener(
+                                    'submit',
+                                    (event) => {
+                                        if (!form.checkValidity()) {
+                                        event.preventDefault();
+                                        event.stopPropagation();
+                                        }
+
+                                        form.classList.add('was-validated');
+                                    },
+                                    false,
+                                    );
+                                });
+                                })();
+                            </script>
+                            <!--end::JavaScript-->
                         </div>
                     </div>
                 </div>

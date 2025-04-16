@@ -3,6 +3,8 @@
 use App\Http\Controllers\DetailServiceController;
 use App\Http\Controllers\JnsKendaraanController;
 use App\Http\Controllers\JnsServiceController;
+use App\Http\Controllers\KendaraanController;
+use App\Http\Controllers\MekanikController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('dashboard');
-});
+})->name('home');
 
 //route jnskendaraan
 Route::get('/jnskendaraan', [JnsKendaraanController::class, 'index'])->name('jnsKendaraan.index');
@@ -43,3 +45,19 @@ Route::post('/jenisservice/add', [JnsServiceController::class, 'store'])->name('
 Route::get('/jenisservice/edit/{id}', [JnsServiceController::class, 'edit'])->name('jnsService.edit');
 Route::post('/jenisservice/edit/{id}', [JnsServiceController::class, 'update'])->name('jnsService.update');
 Route::get('/jenisservice/delete/{id}', [JnsServiceController::class, 'destroy'])->name('jnsService.delete');
+
+// route kendaraan
+Route::get('/kendaraan', [KendaraanController::class, 'index'])->name('kendaraan.index');
+Route::get('/kendaraan/add', [KendaraanController::class, 'create'])->name('kendaraan.create');
+Route::post('/kendaraan/add', [KendaraanController::class, 'store'])->name('kendaraan.store');
+Route::get('/kendaraan/edit/{id}', [KendaraanController::class, 'edit'])->name('kendaraan.edit');
+Route::post('/kendaraan/edit/{id}', [KendaraanController::class, 'update'])->name('kendaraan.update');
+Route::get('/kendaraan/delete/{id}', [KendaraanController::class, 'destroy'])->name('kendaraan.delete');
+
+// route mekanik
+Route::get('/mekanik', [MekanikController::class, 'index'])->name('mekanik.index');
+Route::get('/mekanik/add', [MekanikController::class, 'create'])->name('mekanik.create');
+Route::post('/mekanik/add', [MekanikController::class, 'store'])->name('mekanik.store');
+Route::get('/mekanik/edit/{id}', [MekanikController::class, 'edit'])->name('mekanik.edit');
+Route::post('/mekanik/edit/{id}', [MekanikController::class, 'update'])->name('mekanik.update');
+Route::get('/mekanik/delete/{id}', [MekanikController::class, 'destroy'])->name('mekanik.delete');

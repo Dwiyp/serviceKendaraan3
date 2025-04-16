@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\detail_service;
 use App\Models\jns_service;
 use Illuminate\Http\Request;
 

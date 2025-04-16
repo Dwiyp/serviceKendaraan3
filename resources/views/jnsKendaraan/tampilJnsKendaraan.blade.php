@@ -19,7 +19,7 @@
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-end">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                            <li class="breadcrumb-item active" aria-current="page">Jenis Kendaraan</li>
                             </ol>
                         </div>
                     </div>
@@ -34,10 +34,10 @@
                 <div class="container-fluid">
                     <!--begin::Row-->
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <div class="card mb-4">
                                 <div class="card-header">
-                                    <div class="row">
+                                    <div class="row align-items-center">
                                         <div class="col-11">
                                             <h3 class="card-title">Data Jenis Kendaraan</h3>
                                         </div>
@@ -55,19 +55,18 @@
                                             <td>Nama jenis kendaraan</td>
                                             <td>Aksi</td>
                                         </tr>
-                                        @php $no = 1; @endphp
                                         @foreach($data as $row)
-                                        <tr>
-                                            <td>{{$no++}}</td>
-                                            <td>{{$row->nm_jns_kendaraan}}</td>
-                                            <td>
-                                                <a href="{{route('jnsKendaraan.edit', $row->id)}}"
-                                                class="btn btn-warning">Edit</a>
-                                                <span class="separator"></span>
-                                                <a href="{{route('jnsKendaraan.delete', $row->id)}}"
-                                                class="btn btn-danger">Delete</a>
-                                            </td>
-                                        </tr>
+                                            <tr>
+                                                <td>{{$loop->iteration}}</td>
+                                                <td>{{$row->nm_jns_kendaraan}}</td>
+                                                <td>
+                                                    <a href="{{route('jnsKendaraan.edit', $row->id)}}"
+                                                    class="btn btn-warning">Edit</a>
+                                                    <span class="separator"></span>
+                                                    <a href="{{route('jnsKendaraan.delete', $row->id)}}"
+                                                    class="btn btn-danger">Delete</a>
+                                                </td>
+                                            </tr>
                                         @endforeach
                                     </table>
                                 </div>

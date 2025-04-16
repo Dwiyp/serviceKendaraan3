@@ -5,13 +5,13 @@
           <a href="./index.html" class="brand-link">
             <!--begin::Brand Image-->
             <img
-              src="{{ asset('assets/assets/img/AdminLTELogo.png') }}"
+              src="{{ asset('assets/assets/img/Logo.jpg') }}"
               alt="AdminLTE Logo"
-              class="brand-image opacity-75 shadow"
+              class="brand-image opacity-75 shadow rounded-circle"
             />
             <!--end::Brand Image-->
             <!--begin::Brand Text-->
-            <span class="brand-text fw-light">AdminLTE 4</span>
+            <span class="brand-text fw-light">Serpiece</span>
             <!--end::Brand Text-->
           </a>
           <!--end::Brand Link-->
@@ -37,21 +37,33 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="./index.html" class="nav-link active">
+                    <a href="{{route('jnsKendaraan.index')}}" class="nav-link {{ Route::currentRouteName() == 'jnsKendaraan.index' ? 'active' : '' }}">
                       <i class="nav-icon bi bi-circle"></i>
-                      <p>Dashboard v1</p>
+                      <p>Jenis Kendaraan</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="./index2.html" class="nav-link">
+                    <a href="{{route('detailService.index')}}" class="nav-link {{ Route::currentRouteName() == 'detailService.index' ? 'active' : '' }}">
                       <i class="nav-icon bi bi-circle"></i>
-                      <p>Dashboard v2</p>
+                      <p>Detail Service</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="./index3.html" class="nav-link">
+                    <a href="{{route('jnsService.index')}}" class="nav-link {{ Route::currentRouteName() == 'jnsService.index' ? 'active' : '' }}">
                       <i class="nav-icon bi bi-circle"></i>
-                      <p>Dashboard v3</p>
+                      <p>Jenis Service</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{route('kendaraan.index')}}" class="nav-link {{ Route::currentRouteName() == 'kendaraan.index' ? 'active' : '' }}">
+                      <i class="nav-icon bi bi-circle"></i>
+                      <p>Kendaraan</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{route('mekanik.index')}}" class="nav-link {{ Route::currentRouteName() == 'mekanik.index' ? 'active' : '' }}">
+                      <i class="nav-icon bi bi-circle"></i>
+                      <p>Mekanik</p>
                     </a>
                   </li>
                 </ul>

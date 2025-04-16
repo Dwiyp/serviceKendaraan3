@@ -15,11 +15,11 @@
                 <div class="container-fluid">
                     <!--begin::Row-->
                     <div class="row">
-                        <div class="col-sm-6"><h3 class="mb-0">Detail Service</h3></div>
+                        <div class="col-sm-6"><h3 class="mb-0">Kendaraan</h3></div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-end">
                             <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Detail Service</li>
+                            <li class="breadcrumb-item active" aria-current="page">Kendaraan</li>
                             </ol>
                         </div>
                     </div>
@@ -39,10 +39,10 @@
                                 <div class="card-header">
                                     <div class="row align-items-center">
                                         <div class="col-11">
-                                            <h3 class="card-title">Data Detail Service</h3>
+                                            <h3 class="card-title">Data Kendaraan</h3>
                                         </div>
                                             <div class="col-1 d-flex justify-content-end">
-                                                <a href="{{route('detailService.create')}}" 
+                                                <a href="{{route('kendaraan.create')}}" 
                                                 class="btn btn-success btn-sm"> Tambah</a>
                                             </div>
                                     </div>
@@ -52,19 +52,27 @@
                                     <table class="table table-striped">
                                         <tr>
                                             <td>No</td>
-                                            <td>Sparepart</td>
-                                            <td>Harga</td>
+                                            <td>No Pol</td>
+                                            <td>Tahun Kendaraan</td>
+                                            <td>No Mesin</td>
+                                            <td>No Rangka</td>
+                                            <td>Kapasitas Mesin</td>
+                                            <td>Transmisi</td>
                                             <td>Aksi</td>
                                         </tr>
                                         @foreach($data as $row)
                                             <tr>
                                                 <td>{{$loop->iteration}}</td>
-                                                <td>{{$row->sparepart}}</td>
-                                                <td>{{$row->harga}}</td>
+                                                <td>{{$row->no_pol}}</td>
+                                                <td>{{$row->tahun_kendaraan}}</td>
+                                                <td>{{$row->no_mesin}}</td>
+                                                <td>{{$row->no_rangka}}</td>
+                                                <td>{{$row->kapasitas_mesin}}</td>
+                                                <td>{{$row->transmisi}}</td>
                                                 <td>
-                                                    <a href="{{route('detailService.edit', $row->id)}}"
+                                                    <a href="{{route('kendaraan.edit', $row->id)}}"
                                                     class="btn btn-warning">Edit</a>
-                                                    <a href="{{route('detailService.delete', $row->id)}}"
+                                                    <a href="{{route('kendaraan.delete', $row->id)}}"
                                                     class="btn btn-danger">Delete</a>
                                                 </td>
                                             </tr>

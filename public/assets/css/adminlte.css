@@ -14486,7 +14486,7 @@ html.maximized-card {
 .card-warning,
 .bg-warning,
 .text-bg-warning {
-  --lte-card-variant-bg: #ffc107;
+  --lte-card-variant-bg: #6f42c1;
   --lte-card-variant-bg-rgb: 255, 193, 7;
   --lte-card-variant-color: #000;
   --lte-card-variant-color-rgb: 0, 0, 0;
