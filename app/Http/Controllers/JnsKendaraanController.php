@@ -31,10 +31,10 @@ class JnsKendaraanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //untuk meniympan data ke database
         $data = new jenisKendaraan();
-        $data->nm_jns_kendaraan = $request->jenis_kendaraan;
-        $post = $data->save();
+        $data->nm_jns_kendaraan = $request->nm_jns_kendaraan;
+        $data->save();
         return redirect('jnskendaraan');
     }
 
