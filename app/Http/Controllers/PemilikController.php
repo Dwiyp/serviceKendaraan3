@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Mekanik;
+use App\Models\Pemilik;
 use Illuminate\Http\Request;
 
-class MekanikController extends Controller
+class PemilikController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +13,8 @@ class MekanikController extends Controller
     public function index()
     {
         //
-        $data = mekanik::get();
-        return view('mekanik.tampilMekanik', compact('data'));
+        $data = pemilik::get();
+        return view('pemilik.tampilPemilik', compact('data'));
     }
 
     /**
@@ -23,7 +23,7 @@ class MekanikController extends Controller
     public function create()
     {
         //
-        return view('mekanik.tambahMekanik');
+        return view('pemilik.tambahPemilik');
     }
 
     /**
@@ -32,14 +32,14 @@ class MekanikController extends Controller
     public function store(Request $request)
     {
         //
-        $data = new Mekanik();
-        $data->nm_mekanik = $request->nm_mekanik;
+        $data = new Pemilik();
+        $data->nm_pemilik = $request->nm_pemilik;
         $data->tgl_lahir = $request->tgl_lahir;
         $data->alamat = $request->alamat;
         $data->nik = $request->nik;
         $data->no_hp = $request->no_hp;
         $post = $data->save();
-        return redirect('mekanik');
+        return redirect('pemilik');
     }
 
     /**
@@ -48,8 +48,8 @@ class MekanikController extends Controller
     public function edit(string $id)
     {
         //
-        $data = mekanik::where('id', '=', $id)->get();
-        return view('mekanik.editMekanik', compact('data', 'id'));
+        $data = pemilik::where('id', '=', $id)->get();
+        return view('pemilik.editPemilik', compact('data', 'id'));
     }
 
     /**
@@ -58,15 +58,15 @@ class MekanikController extends Controller
     public function update(Request $request, string $id)
     {
         //
-        $data = mekanik::where('id', '=', $id);
+        $data = pemilik::where('id', '=', $id);
         $data->update([
-            'nm_mekanik' => $request->nm_mekanik,
+            'nm_pemilik' => $request->nm_mekanik,
             'tgl_lahir' => $request->tgl_lahir,
             'alamat' => $request->alamat,
             'nik' => $request->nik,
             'no_hp' => $request->no_hp,
         ]);
-        return redirect('mekanik');
+        return redirect('pemilik');
     }
 
     /**
@@ -75,8 +75,8 @@ class MekanikController extends Controller
     public function destroy(string $id)
     {
         //
-        $data = mekanik::where('id', '=', $id);
+        $data = pemilik::where('id', '=', $id);
         $data->delete();
-        return redirect('mekanik');
+        return redirect('pemilik');
     }
 }

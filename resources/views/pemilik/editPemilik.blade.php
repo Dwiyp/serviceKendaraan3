@@ -14,11 +14,11 @@
             <div class="container-fluid">
                 <!--begin::Row-->
                 <div class="row">
-                    <div class="col-sm-6"><h3 class="mb-0">Mekanik</h3></div>
+                    <div class="col-sm-6"><h3 class="mb-0">Pemilik</h3></div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-end">
                             <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page"><a href="{{route('mekanik.index')}}">Mekanik</a></li>
+                            <li class="breadcrumb-item active" aria-current="page"><a href="{{route('pemilik.index')}}">Pemilik</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Edit</li>
                         </ol>
                     </div>
@@ -41,22 +41,22 @@
                             <!--end::Header-->
                             <!--begin::Form-->
                             @foreach($data as $row)
-                                <form class="needs-validation" action="{{ route('mekanik.update', $id) }}" method="post" novalidate>
+                                <form class="needs-validation" action="{{ route('pemilik.update', $id) }}" method="post" novalidate>
                                     <!--begin::Body-->
                                     @csrf
                                     <div class="card-body">
                                         <div class="row g-3">
                                             <div class="col-md-6">
-                                                <label class="form-label">Nama Mekanik</label>
-                                                <input type="text" class="form-control" name="nm_mekanik"
-                                                    value="{{$row->nm_mekanik}}" required
+                                                <label class="form-label">Nama Pemilik</label>
+                                                <input type="text" class="form-control" name="nm_pemilik"
+                                                    value="{{$row->nm_pemilik}}" required
                                                 />
                                                 <div class="invalid-feedback">Tabel Tidak Boleh Kosong!</div>
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Tanggal Lahir</label>
                                                 <input type="text" class="form-control" name="tgl_lahir"
-                                                    value="{{$row->tgl_mekanik}}" required
+                                                    value="{{$row->tgl_lahir}}" required
                                                 />
                                                 <div class="invalid-feedback">Tabel Tidak Boleh Kosong!</div>
                                             </div>
@@ -75,7 +75,7 @@
                                                 <div class="invalid-feedback">Tabel Tidak Boleh Kosong!</div>
                                             </div>
                                             <div class="col-md-6">
-                                                <label class="form-label">No HP</label>
+                                                <label class="form-label">Nomor Handphone</label>
                                                 <input type="text" class="form-control" name="no_hp"
                                                     value="{{$row->no_hp}}" required
                                                 />
