@@ -66,7 +66,19 @@
                       <p>Mekanik</p>
                     </a>
                   </li>
-                </ul>
+                  <li class="nav-item">
+                    <a href="{{route('pemilik.index')}}" class="nav-link {{ Route::currentRouteName() == 'pemilik.index' ? 'active' : '' }}">
+                      <i class="nav-icon bi bi-circle"></i>
+                      <p>Pemilik</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{route('service.index')}}" class="nav-link {{ Route::currentRouteName() == 'service.index' ? 'active' : '' }}">
+                      <i class="nav-icon bi bi-circle"></i>
+                      <p>Service</p>
+                    </a>
+                  </li>
+                  </ul>
               </li>
               <li class="nav-item">
                 <a href="./generate/theme.html" class="nav-link">
