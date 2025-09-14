@@ -60,11 +60,11 @@ class MekanikController extends Controller
         //
         $data = mekanik::where('id', '=', $id);
         $data->update([
-            'no_pol' => $request->nm_mekanik,
-            'tahun_kendaraan' => $request->tgl_lahir,
-            'no_mesin' => $request->alamat,
-            'no_rangka' => $request->nik,
-            'kapasitas_mesin' => $request->no_hp,
+            'nm_mekanik' => $request->nm_mekanik,
+            'tgl_lahir' => $request->tgl_lahir,
+            'alamat' => $request->alamat,
+            'nik' => $request->nik,
+            'no_hp' => $request->no_hp,
         ]);
         return redirect('mekanik');
     }

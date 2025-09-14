@@ -68,6 +68,13 @@
                                                 <div class="invalid-feedback">Tabel Tidak Boleh Kosong!</div>
                                             </div>
                                             <div class="col-md-6">
+                                                <label class="form-label">NIK</label>
+                                                <input type="text" class="form-control" name="nik"
+                                                    value="{{$row->nik}}" required
+                                                />
+                                                <div class="invalid-feedback">Tabel Tidak Boleh Kosong!</div>
+                                            </div>
+                                            <div class="col-md-6">
                                                 <label class="form-label">No HP</label>
                                                 <input type="text" class="form-control" name="no_hp"
                                                     value="{{$row->no_hp}}" required
